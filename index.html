@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <title>Proyecto ASO</title>
+        <meta charset="UTF-8">
+        <meta name="author" content="Adrian Vazquez Fernandez">
+        <link rel="shortcut icon" href="icono.png">
+        <link rel="stylesheet" href="stilo.css">
+    </head>
+    <script>
+        window.alert("HOLA, BIENVENIDO A ASO");
+        </script>
+    <body>
+
+        <div id="MenuArriba"> 
+            <ul>
+                <li><a class="active" href="Proyecto.html">ASO</a></li>
+                <li><a href="">IAW</a></li>
+                <li><a href="#about">SRI</a></li>
+                <li><a href="#contact">ASGBBDD</a></li>
+                <li><a href="#about">SyAD</a></li>
+              
+                </ul>
+            </div>
+
+        <h1>ADMINISTRACION DE SISTEMAS OPERATIVOS</h1>
+        <h2>TEMA2</h2>
+        
+        <h3><b><u>¿Qué es un proceso?</u></b>
+        <br>
+            Es todo programa que pasa a ejecución y por tanto hace uso de recursos del sistema como la memoria,
+            procesador y el disco. Incluye, instrucciones del programa en ejecución, como los datos que usa y crea.
+            Es un programa en ejecución y por tanto: ocupa memoria, necesita tiempo de ejecución en el procesador y
+            puede acceder a recursos del sistema. Los procesos son creados por otros procesos y dependen de ellos,
+            pueden ser lanzados por usuarios o por otros procesos, creándose árboles de procesos.
+        <br>
+            Proceso es un programa en ejecución y por tanto: ocupa memoria, necesita tiempo de ejecución en el
+            procesador y puede acceder a recursos del sistema. Los procesos son creados por otros procesos y
+            dependen de ellos, pueden ser lanzados por usuarios o por otros procesos, creándose árboles de
+            procesos.
+        </h3>
+
+        <h3><b><u>¿Quién gestiona los procesos?</u></b><br>
+            ·El sistema operativo es el encargado tanto de crear, como de gestionar las transiciones, las comunicaciones
+            entre ellos, entre el resto de componente físicos, así como la finalización de los mismos.
+            ·Cuando se diseña el SO, se definen diferentes estrategias de gestión. Así nos encontramos con una gestión
+            diferente entre diferentes sistemas operativos.</h3>
+
+        <h3><b><u>¿Cómo se gestionan los procesos?</u></b><br>
+            El SO es el encargado de mantener una estructura en la que se almacena toda la información, que se denomina
+            bloque de control de proceso (BCP). Se almacena toda la información útil durante el ciclo de vida del proceso.
+            Por ejemplo guarda información como:<br><b>
+            Identificador del proceso (PID). </b><br>
+            <b>El estado en el que está: preparado, ejecutando..</b>
+            <br>
+            <b>Espacio que ocupa en memoria. </b>
+            <br>
+            <b>Permisos </b><br><b>Propietario.</b>
+        </h3>
+
+        <h3><b><u>Ciclo de vida de los procesos:</u></b>
+            En los sistemas operativos actuales, conviven diferentes procesos que se ejecutan sobre un solo procesador.
+            Sin embargo, el usuario puede lanzar y ejecutar más de un proceso a la vez.
+            El sistema operativo tiene que ser capaz de gestionar todos ellos y de asegurarse que se ejecutan de modo
+            seguro, sin interferir las órdenes de uno sobre las de otros<br>
+            Los principales estados por los que un proceso pasa son:
+            <br><b>Ejecución:</b> En este estado está el proceso cuyas
+            instrucciones están ejecutándose en el CPU.
+            <br><b>Preparados:</b> Están todos los procesos que están en
+            espera de ejecutar instrucciones en el procesador.
+            <br><b>Bloqueados:</b> son los procesos que están esperando
+            la respuesta de algún otro proceso para poder
+            continuar con su ejecución.
+            <center><img src="esquema.png" /></h3></center>
+            
+            <h3><b>Hilos de procesos</b>
+            En ocasiones, los procesos se dividen en hilos que se encargan de realizar tareas de manera separada, que
+            puede ser concurrente.
+            Los hijos suelen compartir información con el proceso padre, pero mantienen información propia, como es
+            el contador de programa y el estado de ejecución.</h3>
+
+
+
+
+
+        <div class="container">
+            <!--Aqui empieza el contenedor de linux a la izquierda-->
+            <div class="column1">
+                <h2>LINUX</h2>
+                <button id="mostrarLinuxprocesos">Procesos</button>
+                    <ul id="listaLinuxprocesos">
+                        <li>
+                            Mediante el comando ps podemos ver los procesos desde la consola de comandos de Linux. Mediante el
+                            comando kill podemos terminar procesos.
+                            </li>
+                        <li><b>ps</b> Para ver procesos:
+                            Un proceso en Linux se compone de UID(Usuario), PID(identificador), PPID(PID del padre), TTY(desde
+                            que sesión se ejecuta)</li>
+                        <li><b>A:</b> muestra todos los procesos que se están ejecutando en el sistema (los de todos los usuarios).</li>
+                        <li><b>-a:</b> muestra todos los procesos excepto los que no están asociados a la terminal con la que se ejecuta el
+                            comando</li>
+                        <li><b>C [nombre del proceso]</b>: muestra únicamente los procesos que tienen el nombre que se ha indicado</li>
+                        <li><b>d:</b> muestra todos los procesos sin los nombres de los usuarios cuya sesión está asignada al proceso.</li>
+                        <li><b>-e:</b> muestra lo mismo que –A (son equivalentes).</li>
+                        <li> <b>-f:</b> muestra todos los procesos con mayor detalle.</li>
+                        <li><b>r:</b> muestra únicamente los procesos que están ejecutándose en ese momento.</li>
+                        <li><b>T:</b> muestra únicamente los procesos asignados a la terminal con la que se ejecuta el comando ps.</li>
+                        <li><b>x:</b> muestra únicamente los procesos que pertenecen al usuario ejecutor.</li>
+                        <li><b>Ps aux:</b> procesos por usuario</li>
+                        <li><b>Htop</b> nos muestra el estado actualizado, top es un comando similar pero menos visual</li>
+                        <li><b>KILL</b> para matar procesos</li>
+                        <li><b>fg 1</b> mueve el proceso a primer plano</li>
+                        <li><b>bg 1</b> mueve el proceso a segundo plano</li>
+                        <li>Si añadimos un & al final de un comando que queramos ejecutar, se ejecutará en segundo plano.</li>
+                    
+                    </ul>
+                <button id="mostrarLinuxservicios">Servicios</button>
+                    <ul id="listaLinuxservicios">
+                        <li>Para ver TODOS los procesos <b>Systemctl</b></li>
+                        <li>Si queremos ver los procesos en ejecución           <b>Systemctl list-unit-files –type service –all</b></li>
+                        <li>Si queremos ver los procesos en ejecución           <b>Systemctl list-unit-files –type service –all</b></li>
+                        <li>Si queremos ver los procesos en ejecución           <b>Systemctl list-unit-files –type service –all</b></li>
+                        <li>Ver el estado de los servicios con                  <b>Systemctl status (“nombre del servicio”)</b></li>
+                        <li>Para reiniciar el servicio seria con                <b>Systemctl restart/stop/start (“nombre del servicio”)</b></li>
+                        <li>Para apagar o encender servicios de inicio del SO   <b>Systemctl enable/disable (“nombre del servicio”)</b></li>
+                    </ul>
+                <button id="mostrarLinuxeventos">Eventos</button>
+                    <ul id="listaLinuxeventos">
+                        <li>Los eventos se registran en el directorio                       <b>/var/log</b></li>
+                        <li>Podemos acceder a los ficheros con Cat                          <b>/var/log/auth</b></li>
+                        <li>Se puede filtrar dentro de el fichero en el directorio con      <b>| grep (variable)</b></li>
+                        <li> Para ver los eventos del arranque del SO                       <b>dmesg</b></li>
+                        <li>También podemos filtrar el resultado con                        <b>| grep (variable)</b></li>
+                        <li>Podemos ver las primeras o ultimas lineas con                   <b>|tall/head -n(numero de lineas)</b></li>
+                        <li>    Podemos ver toda la información mas cozzy con               <b>-H</b></li>
+                        <li>Para ver la fecha y hora usaríamos                              <b>-T</b></li>
+                    </ul>
+            </div>
+            <script>
+                document.getElementById('mostrarLinuxprocesos').addEventListener('click', function() {
+                    var lista = document.getElementById('listaLinuxprocesos');
+                    lista.style.display = (lista.style.display === 'none') ? 'block' : 'none';
+                });
+                document.getElementById('mostrarLinuxservicios').addEventListener('click', function() {
+                    var lista = document.getElementById('listaLinuxservicios');
+                    lista.style.display = (lista.style.display === 'none') ? 'block' : 'none';
+                });
+                document.getElementById('mostrarLinuxeventos').addEventListener('click', function() {
+                    var lista = document.getElementById('listaLinuxeventos');
+                    lista.style.display = (lista.style.display === 'none') ? 'block' : 'none';
+                });
+            </script>
+
+<!-- Aqui empieza windows-->
+            <div class="column2">
+                <h2>WINDOWS</h2>
+                <button id="mostrarWindowsprocesos">Procesos</button>
+                    <ul id="listaWindowsprocesos">
+                        <li>En Windows tenemos la <b>herramienta de administrador de tareas desde el entorno gráfico</b>. Desde esta
+                            herramienta <b>podemos ver el uso de CPU que está consumiendo, el uso de memoria, disco y red.</b>
+                            También podremos ver el uso de CPU y de memoria que está utilizando cada proceso.
+                            
+                            En los sistemas operativos actuales, conviven diferentes procesos que se ejecutan sobre un solo procesador.
+                            Sin embargo, el usuario puede lanzar y ejecutar más de un proceso a la vez.
+                            El sistema operativo tiene que ser capaz de gestionar todos ellos y de asegurarse que se ejecutan de modo
+                            seguro, sin interferir las órdenes de uno sobre las de otros.
+                            Los principales estados por los que un proceso pasa son:
+                            <li><b>◦Ejecución:</b> En este estado está el proceso cuyas</li>
+                            instrucciones están ejecutándose en el CPU.
+                           <li><b>◦Preparados:</b> Están todos los procesos que están en
+                            espera de ejecutar instrucciones en el procesador.</li> 
+                            <li><b>◦Bloqueados:</b> son los procesos que están esperando
+                            la respuesta de algún otro proceso para poder
+                            continuar con su ejecución.</li>
+                        <li><b>Get-process</b> ver los procesos</li>
+                        <li><b>Get-process -id/-name x*</b> obtener los procesos que cumplan el id o nombre</li>
+                        <li><b>Stop-process (id de proceso)</b> parar el proceso con el id indicado</li>
+                        <li><b>Stop-process -name x*</b> parar el proceso con el nombre indicado</li>
+                        
+                    </ul>
+                <button id="mostrarWindowservicios">Servicios</button>
+                    <ul id="listaWindowsservicios">
+                        <li>Son procesos especiales, que dependen del SO, proporcionan funcionalidades tanto en equipos clientes como en
+                            equipos servidores. Desde el panel de servicios podemos ver, su descripcion, estado o tipo de inicio.<br>
+                            Al acceder a uno de ellos podemos <b>inciar pausar o parar</b> Tambien cambiar el modo en que se incia.</li>
+                        <li>De manera general, <b>se recomienda desactivar todos
+                            aquellos servicios que no son estrictamente necesarios.</b><br>
+                            Esta medida es más importante en los servidores.
+                            También se pueden activar todos aquellos que sean
+                            necesarios. Fíjate que no se desinstalan, sólo se
+                            desactivan. </li>
+                        <li><b>Get-service</b> para ver los servicios</li>
+                        <li><b>Stop-Service</b> parar un servicio</li>
+                        <li><b>Start-Service</b> iniciar un servicio</li>
+                        <li><b>–StartupType</b> Para cambiar la forma en la que activan los procesos indicamos forma en la que inicia: 
+                            <b>Manual, boot, deshabilitado, automatic</b></li>
+                        
+                    </ul>
+                <button id="mostrarWindowseventos">Eventos</button>
+                    <ul id="listaWindowseventos">
+                        <li>Desde la herramienta de Registro de Eventos podemos acceder al histórico y ver que está pasando o que ha
+                            pasado en el sistema. Podemos, por ejemplo ver errores producidos. Los eventos de Windows suelen estar en el directorio:
+                            <b>%systemroot%\system32\Winevt</b>
+                            <li><b>Registro de eventos</b><br>
+                                Fíjate que hay mensajes de Información, de advertencia y de
+                                error y que los podemos filtrar.
+                                El ejemplo muestra un error de replicación:
+                                Una replicación es el proceso mediante el cual las
+                                modificaciones en un controlador de dominio se actualizan
+                                en el resto del dominio</li>
+                            <li>Desde cmd con el comando env vemos las variables del entorno.</li>
+                            <li>·Podemos hacer uso de estas variables utilizando el carácter «%» de la forma %variable%.</li>
+                            <li>·Por ejemplo en script utilizamos la variable %homepath% para hacer referencia a la ruta del usuario.</li></li>
+                        <li><b>env</b> Nos muestra las variables de entorno</li>
+                        <li><b>%nombre-variable%</b> Para usar la variable del entorno</li>
+                    </ul>
+                <button id="mostrarWindowpowershell">Powershell</button>
+                    <ul id="listaWindowspowershell">
+                        <li><b>get-eventlog -list</b> para ver la lista completa</li>
+                        <li><b>get-eventlog “DNS server”</b> busca los eventos del servidor DNS</li>
+                        <li><b>get-eventlog -newest 3</b> muestra los 3 últimos eventos</li>
+                        <li>Podemos sacar todos los errores del sistema</li>
+                        <li><b>get-eventlog</b>(Que pedimos(eventos)) <b>-logname “system”</b>(que log buscamos por nombre) <b>-Entrytype “Error”</b>(en la columna x, que buscamos)</li>
+                        <li>Es decir, llamamos a eventlog, buscamos los que son del system y que en la columna entrytype muestren error</li>
+                    </ul>
+            </div>
+        </div> 
+
+        <script>
+            document.getElementById('mostrarWindowsprocesos').addEventListener('click', function() {
+                var lista = document.getElementById('listaWindowsprocesos');
+                lista.style.display = (lista.style.display === 'none') ? 'block' : 'none';
+            });
+            document.getElementById('mostrarWindowservicios').addEventListener('click', function() {
+                var lista = document.getElementById('listaWindowsservicios');
+                lista.style.display = (lista.style.display === 'none') ? 'block' : 'none';
+            });
+            document.getElementById('mostrarWindowseventos').addEventListener('click', function() {
+                var lista = document.getElementById('listaWindowseventos');
+                lista.style.display = (lista.style.display === 'none') ? 'block' : 'none';
+            });
+            document.getElementById('mostrarWindowpowershell').addEventListener('click', function() {
+                var lista = document.getElementById('listaWindowspowershell');
+                lista.style.display = (lista.style.display === 'none') ? 'block' : 'none';
+            });
+
+            
+        </script>
+        
+
+    </body>
+</html>
