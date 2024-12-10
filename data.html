@@ -7,6 +7,51 @@
 <body>
 ip=192.168.4.121
 port=8080
+  <p>
+    INTEGRIDAD
+Sudo apt install rkhunter
+Sudo rkhunter --check
+MAN(ual) rkhunter
+sudo apt install chkrootkit
+man chkrootkit
+chkrootkit -x (tardan mucho)
+chkrootkit -q(uiet) (tardan mucho)
+Programas para ver el estado de la maquina y ver si esta comprometida LA INTEGRIDAD
+DISPONIBILIDAD
+apt install NMAP
+nmap 8.8.8.8 mapea hasta la ip de google mirando porque puerto y demas.
+Nmap -Pn localhost mirar los puertos abiertos de nuestra maquina.
+Nmap --iflist ver equipos de red
+nmap -p 23 nuestraip ver telnet
+nmap -p 22 nuestraip ver ssh
+nmap -sT -P 1-65535 nuestraip revisar todos los puertos que sean TCP(soporta p y P)
+nmap -sU -P 1-65535 nuestraip revisar todos los puertos que sean UDP
+
+  gpg --gen-key crear un par de claves publicas y privadas
+metemos nuestros datos y contraseñas
+gpg --list-keys | gpg -k |lista de contraseñas almacenadas publicas
+gpg --list-secret-keys | gpg -K |lista de contraseñas almacenadas privada
+gpg –delete-secret-key |borrar clave privada
+gpg --delete-key |borrar clave publica
+gpg --send-key --keyserver nombre_servidor clave_publica |(enviar clave a servidor)
+gpg --search-key --keyserver nombre_servidor clave_publica
+gpg --armor --output ficheroclave --export clave_publica |exportar claves publica
+gpg --armor --output fucheroclave --export-secret-keys clave_privada |exportar clave privada
+gpg –import ficheroclave |importar clave publica
+gpg --allow-secret-key-import –import archivoclavepriv.key |importar clave privada
+gpg -a -r clavepublicaOTRO --encrypt archivo |encriptar archivo con clave publica
+gpg archivo.gpg |descifrar archivo
+gpg --gen-revoke clave |crea la revocacion
+gpg --gen-revoke -o fichero.asc clave |crea el archivo de revocacion
+una vez creada la revocacion hay que compartirla en rediris y entonces cuando alguien intente
+cifrar con la clave revocada no le dejara
+(“firma digital
+manda>
+gpg -u clave --output archivofirmado.txt --sign firmapublica.asc firmar
+gpg --verify archivofirmado.txt verificar
+recibe \<
+gpg --output firmapublica.asc --decrypt archivofirmado.txt descifra
+</p>
 </body>
 </html>
 
